@@ -12,3 +12,12 @@ server.on("request", function(req, res) {
 /** server监听端口 */
 server.listen(8082);
 console.log("server is listening 8082");
+
+
+/*同：*/
+var http = require("http");
+var server = http.createServer(function(req,res){
+    res.end("ending");
+});
+server.listen(8080);
+console.log("server is listening 8080");
