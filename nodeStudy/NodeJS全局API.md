@@ -73,3 +73,25 @@ var sys = process.platform;   当前运行平台
   server.listen(8080);
   console.log("server is listening 8080");
 ```  
+
+#### 5. console  
+- console.log()
+  - 调试：  
+①、检测代码是否执行到console.log的位置，  
+②、可以输出一些变量的值，判断程序的执行状态。  
+  - 占位符  
+    - %d  表示数字  
+    - %s  表示字符串
+    - %j  表示json数组  
+- console.time()   console.timeEnd()  
+检测代码的执行效率  
+#### 6. process  
+- `process.argv[]` 表示命令行输入参数的数组，默认有2个数组元素
+  - `process.argv[0]`  表示node的可执行文件所在路径
+  - `process.argv[1]`  表示当前执行脚本文件所在路径
+  - `process.argv[2]`  2以后的表示的是传入的命令行参数
+- `process.exit()`  表示当前进程退出
+- `process.kill()`  表示杀死当前进程
+- `rocess.pid`  表示进程的id值，是进程的唯一标识  
+- `process.platform`  返回程序运行的操作系统平台
+- `process.cwd()`  当前脚本执行所在的路径（目录）
