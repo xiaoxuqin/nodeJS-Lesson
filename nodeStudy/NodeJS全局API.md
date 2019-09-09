@@ -20,3 +20,56 @@ url模块：用于解析和处理URL字符串
   - 从对象中提取 `.pathname` 是资源路径， 根据资源路径，可以决定执行那一段代码
 - 服务监听一个窗口
 - 当客户端的http请求发起时，才会执行回调函数里面的内容
+
+```js
+    var urlObj = url.parse(req.url);
+    var urlPathName = urlObj.pathname;
+    if(urlPathName == "/favicon.ico"){
+        res.end();
+    }
+    else if(urlPathName == "/"){
+        var htmlPath = __dirname + "\\view\\index.html";
+        var htmlContent = fs.readFileSync(htmlPath);
+        htmlContent = htmlContent.toString("utf8");
+        res.writeHead(200, {"Content-Type":"text/html"});
+        res.write(htmlContent);
+        res.end();
+    }else if(urlPathName == "/js/index.js"){
+        var jsPath = path.join(__dirname, "/js/index.js");
+        var jsContent = fs.readFileSync(jsPath);
+        res.writeHead(200, {"Content-Type":"text/html"});
+        res.write(jsContent);
+        res.end();
+    }
+```
+
+#### 4. 练习NO.2 ： 针对于不同的系统目录拼接的问题  
+var sys = process.platform;   当前运行平台
+
+```javascript
+  const http = require("http");
+  const fs = require("fs");
+  var server = http.createServer(function(req, res){
+      var sys = process.platform;
+      var htmlPath = "";
+      switch(sys){
+          case "linux":
+              htmlPath = __dirname + "/view/index.html";
+              break;
+          case "win32":
+              htmlPath = __dirname + "\\view\\index.html";
+              break;
+          default:
+              console.log("konwn system");
+              break;
+      }
+      var htmlContent = fs.readFileSync(htmlPath);
+      htmlContent = htmlContent.toString("utf8");
+      console.log(req.url);
+      res.writeHead(200, {"Content-Type": "text/html"});
+      res.write(htmlContent);
+      res.end();
+  });
+  server.listen(8080);
+  console.log("server is listening 8080");
+```  
