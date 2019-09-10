@@ -1,0 +1,14 @@
+1. 初始化指令 npm init
+2. 按提示输入，敲回车
+3. 初始化完成之后会有一个 package.json 文件， 是当前项目的一个配置信息
+4. 使用 npm install date-now --save-dev 指令
+    npm install 模块名 --save-dev
+    就可以将按装模块的信息存入到package.json文件中
+5. 跳回上一级： cd ../
+6. 命令行工具：
+    nrm : npm install nrm -g 全局安装
+    nrm + 回车 ：输出帮助提示信息
+    nrm ls : 列出服务器地址，npm可以从哪个服务器进行下载，带*是选中状态
+    nrm use + 镜像名字 : 进行切换下载第三方模块的镜像名字，nrm use taobao
+nrm用来管理第三方模块的下载镜像，
+当原来服务器不存在某个模块，或者下载速度很慢的时候，可以尝试切换下载服务器
