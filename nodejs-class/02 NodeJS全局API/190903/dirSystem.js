@@ -22,7 +22,6 @@ var server = http.createServer(function(req,res) {
             break;
     }
 
-
     // var htmlPath = __dirname + "\\view\\index.html";
     /**仅限于Window系统的斜线 */
     var htmlContent = fs.readFileSync(htmlPath);
@@ -31,7 +30,7 @@ var server = http.createServer(function(req,res) {
     // console.log("htmlPath          " + htmlPath);
     // console.log("htmlContent       " + htmlContent);
 
-    // res.writeHead(200, {"Content-Type":"text/html"});
+    res.writeHead(200, {"Content-Type":"text/html"});
     // res.write(htmlContent);
     res.end();
     // res.end("接收到客户端请求");

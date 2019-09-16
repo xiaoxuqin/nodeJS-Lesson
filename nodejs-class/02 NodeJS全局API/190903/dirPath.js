@@ -15,7 +15,7 @@ var server = http.createServer(function(req,res) {
     var htmlPath = path.join(__dirname, "/view/index.html"); /**仅限于Window系统的斜线 */
     var htmlContent = fs.readFileSync(htmlPath); /**这是原始二进制数据在缓冲区中的内容，同步读取文件 */
     htmlContent = htmlContent.toString("utf8");  /**要显示文件内容可以使用toString()或者设置输出编码 */
-
+    // 变成utf-8的文档，HTML代码的形式
     res.writeHead(200, {"Content-Type":"text/html"});
     res.write(htmlContent);
     res.end();
