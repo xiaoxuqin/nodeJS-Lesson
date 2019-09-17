@@ -128,7 +128,8 @@ process.stdin.on("data", function(data){
  ```  
  
  * 初始化一个Buffer使用 `Buffer.alloc(10)    // <Buffer 00 00 00 00 00 00 00 00 00 00>`  
- 由此得到： utf-8 ==> buffer ==> base64        utf-8 <== buffer <== base64  
+ 由此得到： utf-8 ==> buffer ==> base64  
+           utf-8 <== buffer <== base64  
  
  #### 8. 模块  
  
