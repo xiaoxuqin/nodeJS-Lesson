@@ -1,5 +1,6 @@
+const stream = require("stream");
 
- 
-function MyReadable(){
-
-}
+var MyReaderable = new stream.Readable();
+MyReaderable.push("abcdefghjklmnopqrstuvwxyz");
+MyReaderable.push(null);
+MyReaderable.pipe(process.stdout);
