@@ -1,1 +1,0 @@
-console.log('child argv:', process.argv[2]);

@@ -1,5 +1,0 @@
-
-exec()
-execFile()
-spawn()
-fork()
