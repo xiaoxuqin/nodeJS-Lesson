@@ -2,6 +2,8 @@
 
 - demo_review分支
 
+教程： https://nodejs.wangding.in
+
 在传统的web服务器中，每一个请求都会让服务器创建一个新的进程来处理这个请求。Ajax，每次只请求需要的部分页面信息。
 
 node.js是一个运行在chromeJavascript运行环境下（俗称GoogleV8引擎）的开发平台，用来方便快捷的创建服务器端网络应用程序。
